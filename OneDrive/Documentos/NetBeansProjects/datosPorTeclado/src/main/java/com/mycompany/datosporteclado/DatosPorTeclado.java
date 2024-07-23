@@ -47,7 +47,7 @@ public class DatosPorTeclado {
             System.out.println("ingrese un numero de 1 al 20 :"+nota3+" no es valido");
         }
         
-         //cuarta nota
+         //cuarta nota22
         System.out.print("Ingres la cuarta nota :");
         double nota4 = scanner.nextDouble();
         if(nota4>=1 && nota4<=20){
