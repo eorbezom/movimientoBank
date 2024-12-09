@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Error 404</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/miestilo.css}">
+</head>
+<body>
+	<header th:replace="home::header"></header>
+	<div class="container text-center">
+		<div class="panel bg-light">
+			<h3>
+				<span th:text="${error}"> </span><span th:text=${status}></span>
+			</h3>
+		</div>
+
+
+		<div
+			class="container d-flex justify-content-center align-items-center">
+			<div class="form-container text-center" style="border:none;">
+
+				<div class="container error-container">
+					<img th:src="@{/imgenes/algoSalioMal.png}" width="310" height="310">
+					<h3>No se pudo encontrar la página. Puede haber sido movida o el enlace es incorrecto. 
+					Regrese a la página principal.</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="home::footer"></footer>
+
+</body>
+</html>

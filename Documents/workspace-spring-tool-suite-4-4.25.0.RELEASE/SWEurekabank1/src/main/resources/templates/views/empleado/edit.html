@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Editar Empleado</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/miestilo.css}">
+</head>
+<body>
+
+	<header th:replace="home::header"></header>
+
+	<div class="container d-flex justify-content-center align-items-center">
+		<!-- Formulario centrado  falta minuto1:30 -->
+		<div class="form-container">
+			<h1>Editar Cliente</h1>
+			<p class="text-muted">
+				Estás modificando el cliente de ID: <strong
+					th:text="${empleado.codigo}"></strong>
+			</p>
+			<form th:action="@{/views/empleado/save}" method="post">
+				<input type="hidden" name="codigo" th:value="${empleado.codigo}">
+				<div class="mb-3">
+					<label class="form-label">Paterno</label> <input type="text"
+						name="paterno" class="form-control" th:value="${empleado.paterno}">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Materno</label> <input type="text"
+						name="materno" class="form-control" th:value="${empleado.materno}">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Nombres</label> <input type="text"
+						name="nombre" class="form-control" th:value="${empleado.nombre}">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Usuario</label> <input type="text"
+						name="usuario" class="form-control" th:value="${empleado.usuario}">
+				</div>
+
+				<label class="form-label">Estado</label> <select class="form-select"
+					aria-label="Default select example" name="estado">
+					<option th:if="${empleado.estado == true}" value="true">ACTIVO</option>
+					<option th:unless="${empleado.estado == false}" value="false">INACTIVO</option>
+					<option th:if="${empleado.estado == false}" value="true">INACTIVO</option>
+					<option th:unless="${empleado.estado == true}" value="true">ACTIVO</option>
+				</select>
+				<button type="submit" class="btn btn-success">Guardar</button>
+				<button class="btn btn-danger" th:href="@{/views/empleado}">Cancelar</button>
+			</form>
+		</div>
+
+	</div>
+	<footer th:replace="home::footer"></footer>
+	
+</body>
+</html>
+<
+<!-- MINUTO 1.54 -->

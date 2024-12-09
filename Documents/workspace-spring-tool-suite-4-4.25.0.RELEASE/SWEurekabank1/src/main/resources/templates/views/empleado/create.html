@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Crear Empleado</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/miestilo.css}">
+</head>
+<body>
+	<header th:replace="home::header"></header>
+	
+	<div class="container d-flex justify-content-center align-items-center">
+		<!-- Formulario centrado  falta minuto1:30 -->
+		<div class="form-container">
+			<h1 class="text-center">Crear Empleado</h1>
+
+			<form th:action="@{/views/empleado/save}" method="post">
+				<div class="mb-3">
+					<label class="form-label">Paterno</label> <input type="text"
+						name="paterno" class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Materno</label> <input type="text"
+						name="materno" class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Nombres</label> <input type="text"
+						name="nombre" class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Usuario</label> <input type="text"
+						name="usuario" class="form-control">
+				</div>
+
+				<button type="submit" class="btn btn-success">Guardar</button>
+			</form>
+
+		</div>
+	</div>
+	<footer th:replace="home::footer"></footer>
+
+</body>
+</html>

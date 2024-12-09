@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Lista de Empleado</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/miestilo.css}">
+</head>
+<body>
+	<!-- Navbar -->
+	<header th:replace="home::header"></header>
+
+	<div class="container d-flex justify-content-center align-items-center">
+
+	<!-- Contenedor para la tabla -->
+	<div class="container">
+		<h2 class="text-center mb-4">Lista de Empleados</h2>
+
+		<button type="button" class="btn btn-info">
+			<a th:href="@{/views/empleado/create}" class="nav-link"> Agregar Empleado</a>
+		</button>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th scope="col">Codigo</th>
+					<th scope="col">Paterno</th>
+					<th scope="col">Materno</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Usuario</th>					
+					<th scope="col">Estado</th>
+					<td scope="col">Acción</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="c:${empleado}">
+					<td th:text="${c.codigo}"></td>
+					<td th:text="${c.paterno}"></td>
+					<td th:text="${c.materno}"></td>
+					<td th:text="${c.nombre}"></td>
+					<td th:text="${c.usuario}"></td>					
+					<td th:text="${c.estado} ? 'ACTIVO' : 'INACTIVO'"></td>
+					<td><a th:href="@{/views/empleado/edit/{codigo}(codigo=${c.codigo})}"
+						class="btn btn-warning">Editar</a> <a
+						th:href="@{/views/empleado/delete/{codigo}(codigo=${c.codigo})}"
+						class="btn btn-danger">Eliminar</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	</div>
+	<footer th:replace="home::footer"></footer>
+	
+</body>
+</html>

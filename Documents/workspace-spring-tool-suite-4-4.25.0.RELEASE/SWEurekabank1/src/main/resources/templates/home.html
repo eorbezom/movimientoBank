@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head th:fragment="head">
+<meta charset="UTF-8">
+<title>Proyecto SWEurekabanck</title>
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/miestilo.css}">
+</head>
+
+<body>
+	<header th:fragment="header">
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+			<div class="container">
+
+				<a class="navbar-brand" th:href="@{/inicio}">SWEurekabank1</a>
+				<!-- Opciones -->
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a th:href="@{/inicio}" class="nav-link">Inicio</a></li>
+						<li class="nav-item"><a th:href="@{/views/cliente}"
+							class="nav-link active" aria-current="page">Cliente</a></li>
+						<li class="nav-item"><a th:href="@{/views/empleado}"
+							class="nav-link">Empleado</a></li>
+						<li class="nav-item"><a th:href="@{/views/cuentas}"
+							class="nav-link">Cuentas</a></li>
+						<li class="nav-item"><a th:href="@{/views/movimientos}"
+							class="nav-link">Movimientos</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container d-flex justify-content-center align-items-center">
+		<div class="form-container text-center">
+			<h1>BIENVENIDO A LA PÁGINA DE INICIO</h1>
+			<p class="text-muted">Gestiona tus cuentas de manera eficiente y
+				rápida.</p>
+		</div>
+	</div>
+
+<!--  2:29 --> 
+
+	<footer th:fragment="footer"
+		class="bg-dark text-center text-white mt-auto py-3">
+		<div class="container">© 2024 Eurekabank. 2024.</div>
+		<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+	</footer>
+
+	
+</body>
+</html>
