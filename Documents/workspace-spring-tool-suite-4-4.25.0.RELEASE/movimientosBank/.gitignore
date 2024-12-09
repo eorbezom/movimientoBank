@@ -1,0 +1,22 @@
+# Ignorar carpetas del sistema
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.VirtualBox/
+.android/
+.cache/
+.config/
+.m2/
+.gradle/
+node_modules/
+NTUSER.*
+OneDrive/
+AppData/
+Desktop.ini
+
+# Ignorar binarios o configuraciones temporales
+*.log
+*.tmp
+*.class
+*.hprof
