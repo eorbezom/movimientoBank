@@ -13,7 +13,7 @@ import com.pe.certus.model.MovimientoRequest;
 import com.pe.certus.service.MovimientoService;
 import com.pe.certus.service.MovimientoServiceImpl;
 
-
+//hola mundo texto solo para provar el commit
 @Path("v1/movimientos")
 public class MovimientoController {
 	
